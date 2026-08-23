@@ -1,0 +1,6 @@
+{
+  "name": "The Spotlightt Co.",
+  "description": "A premium cinematic live entertainment platform. Discover events, perform on stage, and experience unforgettable live shows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
