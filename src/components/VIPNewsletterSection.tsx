@@ -14,9 +14,15 @@ export const VIPNewsletterSection: React.FC = () => {
   });
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !email.includes('@')) return;
+    const response = await fetch('/api/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    if (!response.ok) return;
     setSubmitted(true);
     try {
       confetti({
@@ -28,9 +34,15 @@ export const VIPNewsletterSection: React.FC = () => {
     } catch {}
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!contactForm.name || !contactForm.email || !contactForm.message) return;
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(contactForm),
+    });
+    if (!response.ok) return;
     setContactSubmitted(true);
   };
 

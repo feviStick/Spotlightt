@@ -108,13 +108,38 @@ interface SpotlightContextType {
 
 const SpotlightContext = createContext<SpotlightContextType | undefined>(undefined);
 
+const normalizeBooking = (booking: any): AudienceBooking => ({
+  ...booking,
+  bookingRef: booking.bookingRef ?? booking.booking_ref,
+  eventId: booking.eventId ?? booking.event_id,
+  ticketType: booking.ticketType ?? booking.ticket_type,
+  pricePerTicket: booking.pricePerTicket ?? booking.price_per_ticket,
+  paymentMethod: booking.paymentMethod ?? booking.payment_method,
+  paymentStatus: booking.paymentStatus ?? booking.payment_status,
+  transactionId: booking.transactionId ?? booking.transaction_id,
+  qrData: booking.qrData ?? booking.qr_data,
+  createdAt: booking.createdAt ?? booking.created_at,
+});
+
+const normalizeRegistration = (registration: any): PerformerRegistration => ({
+  ...registration,
+  eventId: registration.eventId ?? registration.event_id,
+  categoryId: registration.categoryId ?? registration.category_id,
+  applicationStatus: registration.applicationStatus ?? registration.application_status,
+  paymentStatus: registration.paymentStatus ?? registration.payment_status,
+  transactionId: registration.transactionId ?? registration.transaction_id,
+  assignedSlot: registration.assignedSlot ?? registration.assigned_slot,
+  certificateUrl: registration.certificateUrl ?? registration.certificate_url,
+  createdAt: registration.createdAt ?? registration.created_at,
+});
+
 export const SpotlightProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Cities
-  const [cities] = useState<City[]>(SEED_CITIES);
+  const [cities, setCities] = useState<City[]>(SEED_CITIES);
   const [selectedCity, setSelectedCity] = useState<City>(SEED_CITIES[0]);
 
   // Categories & Venues
-  const [categories] = useState<Category[]>(SEED_CATEGORIES);
+  const [categories, setCategories] = useState<Category[]>(SEED_CATEGORIES);
   const [venues] = useState<Venue[]>(SEED_VENUES);
 
   // Events (with localStorage persistence)
@@ -194,10 +219,34 @@ export const SpotlightProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     ];
   });
 
-  const [testimonials] = useState<Testimonial[]>(SEED_TESTIMONIALS);
-  const [faqs] = useState<FAQItem[]>(SEED_FAQS);
-  const [gallery] = useState<GalleryItem[]>(SEED_GALLERY);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(SEED_TESTIMONIALS);
+  const [faqs, setFaqs] = useState<FAQItem[]>(SEED_FAQS);
+  const [gallery, setGallery] = useState<GalleryItem[]>(SEED_GALLERY);
   const [coupons] = useState<Coupon[]>(VALID_COUPONS);
+
+  useEffect(() => {
+    let active = true;
+
+    fetch('/api/overview')
+      .then(async response => {
+        if (!response.ok) throw new Error('Overview request failed');
+        return response.json();
+      })
+      .then(overview => {
+        if (!active) return;
+        if (Array.isArray(overview.cities)) setCities(overview.cities);
+        if (Array.isArray(overview.categories)) setCategories(overview.categories);
+        if (Array.isArray(overview.events)) setEvents(overview.events);
+        if (Array.isArray(overview.testimonials)) setTestimonials(overview.testimonials);
+        if (Array.isArray(overview.faqs)) setFaqs(overview.faqs);
+        if (Array.isArray(overview.gallery)) setGallery(overview.gallery);
+      })
+      .catch(error => console.warn('Using local Spotlightt data:', error));
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   // Modals & UI
   const [selectedEventForModal, setSelectedEventForModal] = useState<EventItem | null>(null);
@@ -370,8 +419,20 @@ export const SpotlightProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       createdAt: new Date().toISOString(),
     };
 
-    // Update state
-    setBookings(prev => [newBooking, ...prev]);
+    const response = await fetch('/api/bookings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    if (!response.ok || !result.ok || !result.booking) {
+      return { ok: false, error: result.message || 'Booking could not be completed.' };
+    }
+
+    const savedBooking = normalizeBooking(result.booking);
+
+    // Update state after the backend confirms the booking.
+    setBookings(prev => [savedBooking, ...prev]);
     setEvents(prev =>
       prev.map(ev =>
         ev.id === targetEvent.id
@@ -390,7 +451,7 @@ export const SpotlightProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       });
     } catch {}
 
-    return { ok: true, booking: newBooking };
+    return { ok: true, booking: savedBooking };
   }, [events, applyCoupon]);
 
   // Register performer action
@@ -446,7 +507,18 @@ export const SpotlightProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       createdAt: new Date().toISOString(),
     };
 
-    setRegistrations(prev => [newRegistration, ...prev]);
+    const response = await fetch('/api/performers/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    if (!response.ok || !result.ok || !result.registration) {
+      return { ok: false, error: result.message || 'Registration could not be completed.' };
+    }
+
+    const savedRegistration = normalizeRegistration(result.registration);
+    setRegistrations(prev => [savedRegistration, ...prev]);
 
     // Confetti
     try {
@@ -458,7 +530,7 @@ export const SpotlightProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       });
     } catch {}
 
-    return { ok: true, registration: newRegistration };
+    return { ok: true, registration: savedRegistration };
   }, [events, registrations]);
 
   // Like event
