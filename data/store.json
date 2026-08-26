@@ -1,0 +1,241 @@
+{
+  "events": [
+    {
+      "id": "e1",
+      "title": "Comedy Under The Spotlight",
+      "slug": "comedy-under-the-spotlight",
+      "description": "A powerhouse lineup of North India’s sharpest comedians. High-energy sets, crowd work, and nonstop laughter in a candle-lit hall.",
+      "longDescription": "Get ready for an electrifying night of unfiltered comedy. Curated exclusively by The Spotlightt Co., this edition brings together award-winning stand-ups and fearless underground voices. Expect immersive sound, warm golden lighting, and craft mocktails/cocktails served at the venue.",
+      "categoryId": "comedy",
+      "cityId": "chd",
+      "venueId": "v1",
+      "host": "Aakash Mehta",
+      "guestArtists": [
+        "Kanan Gill",
+        "Neeti Palta",
+        "Jaspreet Singh"
+      ],
+      "startDate": "2026-09-04T20:00:00Z",
+      "endDate": "2026-09-04T22:30:00Z",
+      "registrationOpens": "2026-08-01T00:00:00Z",
+      "registrationCloses": "2026-09-02T23:59:00Z",
+      "poster": "https://images.unsplash.com/photo-1512830414785-9928e23475dc?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ticketPrice": 499,
+      "vipPrice": 999,
+      "premiumPrice": 1599,
+      "registrationFee": 299,
+      "maxAudience": 320,
+      "maxPerformers": 8,
+      "remainingSeats": 164,
+      "status": "upcoming",
+      "featured": true,
+      "likesCount": 342,
+      "timeline": [
+        {
+          "time": "19:30",
+          "activity": "Doors Open & Red Carpet Welcoming"
+        },
+        {
+          "time": "20:00",
+          "activity": "Opening Act & Spotlight Spotlightt Briefing"
+        },
+        {
+          "time": "20:45",
+          "activity": "Headliner Showcase"
+        },
+        {
+          "time": "22:15",
+          "activity": "Meet & Greet + VIP Artist Circle"
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "title": "Verses & Velvet — Spoken Word Night",
+      "slug": "verses-and-velvet",
+      "description": "Electric blue stage, cinematic smoke, and spoken words that echo in your chest. An unforgettable gathering of poets and lyrical storytellers.",
+      "longDescription": "Step into a world crafted purely with spoken words. Soft ambient guitar textures backdrop every piece as poets explore love, rebellion, solitude, and belonging under a dynamic blue spotlight.",
+      "categoryId": "poetry",
+      "cityId": "chd",
+      "venueId": "v2",
+      "host": "Priya Malik",
+      "guestArtists": [
+        "Harnidh Kaur",
+        "Yahya Bootwala"
+      ],
+      "startDate": "2026-09-12T19:30:00Z",
+      "endDate": "2026-09-12T22:00:00Z",
+      "registrationOpens": "2026-08-05T00:00:00Z",
+      "registrationCloses": "2026-09-10T23:59:00Z",
+      "poster": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ticketPrice": 349,
+      "vipPrice": 699,
+      "premiumPrice": 1199,
+      "registrationFee": 199,
+      "maxAudience": 140,
+      "maxPerformers": 12,
+      "remainingSeats": 58,
+      "status": "upcoming",
+      "featured": true,
+      "likesCount": 289,
+      "timeline": [
+        {
+          "time": "19:00",
+          "activity": "Entry & Ambient Soundscape"
+        },
+        {
+          "time": "19:30",
+          "activity": "Featured Poet Opening"
+        },
+        {
+          "time": "20:30",
+          "activity": "Open Spotlight Showcase"
+        },
+        {
+          "time": "21:40",
+          "activity": "Closing Duet & Certificate Handout"
+        }
+      ]
+    },
+    {
+      "id": "e3",
+      "title": "Purple Sessions — Live Indie & Fusion",
+      "slug": "purple-sessions-indie-fusion",
+      "description": "An intimate concert experience with lush purple haze, soulful acoustics, and indie anthems from breakthrough indie bands.",
+      "longDescription": "Immerse in the rich textures of indie-pop, jazz-fusion, and sufi rock. Crafted for discerning listeners who appreciate organic instrumentation and crystal-clear acoustic fidelity.",
+      "categoryId": "music",
+      "cityId": "chd",
+      "venueId": "v3",
+      "host": "Prateek Kuhad",
+      "guestArtists": [
+        "When Chai Met Toast",
+        "The Local Train Tribute Ensemble"
+      ],
+      "startDate": "2026-09-20T20:00:00Z",
+      "endDate": "2026-09-20T23:00:00Z",
+      "registrationOpens": "2026-08-10T00:00:00Z",
+      "registrationCloses": "2026-09-18T23:59:00Z",
+      "poster": "https://images.unsplash.com/photo-1611956425642-d5a8169abd63?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ticketPrice": 799,
+      "vipPrice": 1499,
+      "premiumPrice": 2499,
+      "registrationFee": 399,
+      "maxAudience": 550,
+      "maxPerformers": 6,
+      "remainingSeats": 290,
+      "status": "upcoming",
+      "featured": true,
+      "likesCount": 512,
+      "timeline": [
+        {
+          "time": "19:15",
+          "activity": "VIP Lounge Reception"
+        },
+        {
+          "time": "20:00",
+          "activity": "Acoustic Solo Set"
+        },
+        {
+          "time": "21:00",
+          "activity": "Full Band Ensemble"
+        },
+        {
+          "time": "22:30",
+          "activity": "Grand Finale Jam"
+        }
+      ]
+    },
+    {
+      "id": "e4",
+      "title": "Kahaaniyaan — Warm Storytelling",
+      "slug": "kahaaniyaan-warm-storytelling",
+      "description": "True stories told in the glow of vintage tungsten lamps. Nostalgia, childhood whispers, and heartfelt confessions.",
+      "longDescription": "Every human life is a collection of untold stories. In Kahaaniyaan, real people take the mic to share authentic lived experiences—humorous, poignant, and profoundly relatable.",
+      "categoryId": "storytelling",
+      "cityId": "chd",
+      "venueId": "v2",
+      "host": "Neelesh Misra",
+      "guestArtists": [
+        "Sudhanshu Rai",
+        "Amandeep Singh"
+      ],
+      "startDate": "2026-09-27T19:00:00Z",
+      "endDate": "2026-09-27T21:30:00Z",
+      "registrationOpens": "2026-08-12T00:00:00Z",
+      "registrationCloses": "2026-09-25T23:59:00Z",
+      "poster": "https://images.unsplash.com/photo-1618861297248-3438b3d9aae9?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ticketPrice": 299,
+      "vipPrice": 599,
+      "premiumPrice": 999,
+      "registrationFee": 199,
+      "maxAudience": 140,
+      "maxPerformers": 10,
+      "remainingSeats": 72,
+      "status": "upcoming",
+      "featured": false,
+      "likesCount": 198
+    },
+    {
+      "id": "e5",
+      "title": "Spotlightt Open Mic #18 — Chandigarh Debutants",
+      "slug": "open-mic-chandigarh-18",
+      "description": "5 minutes on stage. Professional audio recording, 4K multi-cam footage, and real audience reactions. Claim your spotlight.",
+      "longDescription": "Whether it is your first time speaking into a microphone or you are testing brand new material, our flagship Open Mic gives you the same sound engineering and stage respect as seasoned headliners.",
+      "categoryId": "openmic",
+      "cityId": "chd",
+      "venueId": "v4",
+      "host": "Team Spotlightt",
+      "guestArtists": [
+        "Surprise Guest Judge"
+      ],
+      "startDate": "2026-10-03T18:30:00Z",
+      "endDate": "2026-10-03T22:00:00Z",
+      "registrationOpens": "2026-08-15T00:00:00Z",
+      "registrationCloses": "2026-10-01T23:59:00Z",
+      "poster": "https://images.unsplash.com/photo-1615754890634-69ac8bca7189?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ticketPrice": 199,
+      "vipPrice": 399,
+      "premiumPrice": 699,
+      "registrationFee": 149,
+      "maxAudience": 180,
+      "maxPerformers": 20,
+      "remainingSeats": 88,
+      "status": "upcoming",
+      "featured": true,
+      "likesCount": 420
+    },
+    {
+      "id": "e6",
+      "title": "The Underground Cypher — Rap & Beatbox Battle",
+      "slug": "the-underground-cypher",
+      "description": "Fiery 8-bar exchanges, punchlines, freestyle battles, and live beatboxing inside a raw industrial setup.",
+      "longDescription": "Chandigarh’s premier hip-hop battleground. 16 emcees go head-to-head in knockout rounds under blood-red stage strobes with live DJ scratching.",
+      "categoryId": "rap",
+      "cityId": "chd",
+      "venueId": "v1",
+      "host": "DIVINE",
+      "guestArtists": [
+        "Raftaar",
+        "MC Stan (Virtual Cameo)"
+      ],
+      "startDate": "2026-10-10T21:00:00Z",
+      "endDate": "2026-10-10T23:59:00Z",
+      "registrationOpens": "2026-08-20T00:00:00Z",
+      "registrationCloses": "2026-10-08T23:59:00Z",
+      "poster": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ticketPrice": 599,
+      "vipPrice": 1199,
+      "premiumPrice": 1999,
+      "registrationFee": 299,
+      "maxAudience": 320,
+      "maxPerformers": 16,
+      "remainingSeats": 195,
+      "status": "upcoming",
+      "featured": false,
+      "likesCount": 610
+    }
+  ],
+  "bookings": [],
+  "registrations": [],
+  "newsletter": []
+}

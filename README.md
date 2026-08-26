@@ -94,3 +94,28 @@ Spotlightt is designed to grow from an event-discovery experience into a complet
 ## License
 
 No open-source license has been added yet. Until a license is explicitly provided, all rights are reserved by the repository owner.
+
+## Payment (Razorpay) Setup
+
+If you plan to enable payments locally or in test/sandbox mode, you need Razorpay test API keys. Follow these steps:
+
+1. Create a Razorpay account at https://razorpay.com and sign in.
+2. Open the dashboard, then go to **Settings → API Keys**.
+3. Click **Generate Key** and choose **Test** (sandbox) keys.
+4. Copy the **Key ID** and **Key Secret**.
+5. Copy `.env.example` to `.env` at the project root and paste your keys:
+
+```env
+RAZORPAY_KEY_ID=your_key_id_here
+RAZORPAY_KEY_SECRET=your_key_secret_here
+RAZORPAY_ENV=TEST
+```
+
+6. Keep these values private. Do not commit `.env` to Git.
+
+Local usage notes:
+
+- The frontend consumes API endpoints on the backend (commonly `http://localhost:8787`). The frontend runs on `http://localhost:3000` during development.
+- For testing payments locally, use the sandbox/test checkout flow — do not enter real card details.
+
+See `.env.example` for other required placeholders.

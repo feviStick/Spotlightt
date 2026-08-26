@@ -50,14 +50,14 @@ const SpotlightAppContent: React.FC = () => {
       <main className="relative z-10">
         {/* 4. Cinematic Rotating Hero Carousel */}
         <HeroCarousel
-          onExploreEvents={() => handleScrollTo('events-section')}
-          onRegisterPerformer={() => handleScrollTo('perform-section')}
+          onExplore={() => handleScrollTo('events-section')}
+          onPerform={() => handleScrollTo('perform-section')}
         />
 
         {/* 5. Split-Screen Performer vs Audience Mode Switcher */}
         <SplitExperience
-          onSelectAudience={() => handleScrollTo('events-section')}
-          onSelectPerformer={() => handleScrollTo('perform-section')}
+          onPerformClick={() => handleScrollTo('perform-section')}
+          onBookClick={() => handleScrollTo('events-section')}
         />
 
         {/* 6. Audience Mode: Live Event Discovery & Booking */}

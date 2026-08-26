@@ -17,10 +17,10 @@ import {
 } from 'lucide-react';
 
 interface AudienceModeSectionProps {
-  onSelectEvent: (event: EventItem) => void;
+  onBookEvent: (event: EventItem) => void;
 }
 
-export const AudienceModeSection: React.FC<AudienceModeSectionProps> = ({ onSelectEvent }) => {
+export const AudienceModeSection: React.FC<AudienceModeSectionProps> = ({ onBookEvent }) => {
   const { events, categories, selectedCity, likeEvent, venues } = useSpotlight();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -339,7 +339,7 @@ export const AudienceModeSection: React.FC<AudienceModeSectionProps> = ({ onSele
                         </div>
 
                         <button
-                          onClick={() => onSelectEvent(ev)}
+                          onClick={() => onBookEvent(ev)}
                           className="btn-glow px-5 py-2.5 rounded-full text-black font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-lg transition-transform active:scale-95"
                           style={{ backgroundColor: themeColor }}
                         >
